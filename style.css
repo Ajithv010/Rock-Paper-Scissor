@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+}
+
+h1 {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  height: 6rem;
+  line-height: 6rem;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+
+.choice {
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  transition: all 0.35s ease;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.choice img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: 0.35s;
+}
+
+.choice:hover {
+  transform: translateY(-12px) scale(1.08);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.choice:hover img {
+  transform: rotate(10deg) scale(1.08);
+}
+
+.choice:active {
+  transform: scale(0.95);
+}
+
+.score-board {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  margin-top: 4rem;
+}
+
+.score {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px 40px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#user-score,
+#computer-score {
+  font-size: 4.5rem;
+  font-weight: bold;
+}
+
+.score p:last-child {
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+}
+
+#msg {
+  margin-top: 4rem;
+  display: inline-block;
+  padding: 18px 35px;
+  font-size: 1.4rem;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+#msg {
+  animation: pulse 2s infinite;
+}
+
+@media (max-width: 768px) {
+  .choices {
+    gap: 1.5rem;
+  }
+
+  .choice {
+    width: 140px;
+    height: 140px;
+  }
+
+  .choice img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .score-board {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  #user-score,
+  #computer-score {
+    font-size: 3rem;
+  }
+}
